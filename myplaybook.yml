@@ -3,9 +3,6 @@
   hosts: all
   gather_facts: true
   become: true
-  become_user: root
-  vars:
-    ansible_shell_allow_world_readable_temp: true
   tasks:
     - name: Add the user 'myuser2'
       ansible.builtin.user:
