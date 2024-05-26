@@ -3,7 +3,8 @@
   hosts: all
   tasks:
 - name: Ping site
-  shell: ping -c 1 -w 2 google.com
+  shell:
+    cmd: ping -c 1 -w 2 google.com
   register: ping_result
 - name: Ping result
   debug:
