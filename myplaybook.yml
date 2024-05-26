@@ -4,18 +4,10 @@
   gather_facts: false
   become: true
   tasks:
-    - name: Copy file hosts with permissions
-      ansible.builtin.copy:
-        src: ./hosts
-        dest: /tmp/hosts_backup
-        mode: '0644'
-    - name: Add the user 'hello'
+    - name: Add the user 'myuser'
       ansible.builtin.user:
-        name: hello
-      become: yes
-      become_method: sudo
+        name: myuser
     - name: Upgrade all apt packages
-      apt:
-        force_apt_get: yes
+      ansible.builtin.apt:
+        force_apt_get: true
         upgrade: dist
-      become: yes
