@@ -1,2 +1,2 @@
 [myhost]
-192.168.64.10 ansible_user=ubuntu
+192.168.64.10
