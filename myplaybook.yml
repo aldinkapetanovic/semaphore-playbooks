@@ -8,9 +8,9 @@
   #   allow_world_readable_tmpfiles: true
 
   tasks:
-    - name: Add the user 'myuser'
+    - name: Add the user 'myuser2'
       ansible.builtin.user:
-        name: myuser
+        name: myuser2
 
     - name: Upgrade all apt packages
       ansible.builtin.apt:
@@ -32,6 +32,7 @@
       users:
         - username: myuser
         - username: ubuntu
+        - username: myuser2
       oh_my_zsh_plugins:
         - git
         - microk8s
