@@ -3,7 +3,7 @@
   hosts: all
   gather_facts: true
   become: true
-  # become_user: root
+  become_user: root
   # vars:
   #   allow_world_readable_tmpfiles: true
 
