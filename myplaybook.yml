@@ -4,16 +4,16 @@
   gather_facts: true
   become: true
   # become_user: root
-  vars:
-  allow_world_readable_tmpfiles: true
-  roles:
-    - role: gantsign.oh-my-zsh
-      users:
-        - username: myuser
-      oh_my_zsh_plugins:
-        - git
-        - microk8s
-        - kubectl
+  # vars:
+  #   allow_world_readable_tmpfiles: true
+  # roles:
+  #   - role: gantsign.oh-my-zsh
+  #     users:
+  #       - username: myuser
+  #     oh_my_zsh_plugins:
+  #       - git
+  #       - microk8s
+  #       - kubectl
   tasks:
     - name: Add the user 'myuser'
       ansible.builtin.user:
@@ -33,4 +33,4 @@
         packages:
           - zsh
           - git
-
+          - acl
