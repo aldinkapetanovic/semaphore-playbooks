@@ -1,0 +1,21 @@
+---
+- name: Ansible Playbooks on Semaphore
+  hosts: all
+  gather_facts: false
+  become: true
+  tasks:
+    - name: Copy file hosts with permissions
+      ansible.builtin.copy:
+        src: ./hosts
+        dest: /tmp/hosts_backup
+        mode: '0644'
+    - name: Add the user 'hello'
+      ansible.builtin.user:
+        name: hello
+      become: yes
+      become_method: sudo
+    - name: Upgrade all apt packages
+      apt:
+        force_apt_get: yes
+        upgrade: dist
+      become: yes
