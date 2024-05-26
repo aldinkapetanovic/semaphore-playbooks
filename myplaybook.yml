@@ -3,14 +3,6 @@
   hosts: all
   gather_facts: true
   become: true
-  roles:
-  - role: gantsign.oh-my-zsh
-    users:
-      - username: myuser
-    oh_my_zsh_plugins:
-      - git
-      - microk8s
-      - kubectl
   tasks:
     - name: Add the user 'myuser'
       ansible.builtin.user:
@@ -30,4 +22,12 @@
         packages:
           - zsh
           - git
+  roles:
+  - role: gantsign.oh-my-zsh
+    users:
+      - username: myuser
+    oh_my_zsh_plugins:
+      - git
+      - microk8s
+      - kubectl
 
