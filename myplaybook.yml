@@ -4,9 +4,8 @@
   gather_facts: true
   become: true
   become_user: root
-  # vars:
-  #   allow_world_readable_tmpfiles: true
-
+  vars:
+    ansible_shell_allow_world_readable_temp: true
   tasks:
     - name: Add the user 'myuser2'
       ansible.builtin.user:
